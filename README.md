@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/TsukumiStudio/MornWebUtil" alt="License" />
+  <img src="https://img.shields.io/badge/license-Unlicense-blue" alt="License" />
 </p>
 
 ## 概要
