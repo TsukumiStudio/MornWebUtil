@@ -1,27 +1,23 @@
-﻿using UnityEngine;
+﻿using UniRx;
+using UnityEngine;
 using UnityEngine.UI;
+using UniRx.Triggers;
 
 namespace MornLib
 {
-    [RequireComponent(typeof(Button))]
     public sealed class MornWebOpenURLButton : MonoBehaviour
     {
-        [SerializeField] private Button _button;
+        [SerializeField] private Selectable _button;
         [SerializeField] private string _url;
 
         private void Awake()
         {
-            _button.onClick.AddListener(OnClick);
-        }
-
-        private void OnDestroy()
-        {
-            _button.onClick.RemoveListener(OnClick);
+            _button.OnSubmitAsObservable().Subscribe(_ => OnClick()).AddTo(this);
         }
 
         private void Reset()
         {
-            _button = GetComponent<Button>();
+            _button = GetComponent<Selectable>();
         }
 
         private void OnClick()

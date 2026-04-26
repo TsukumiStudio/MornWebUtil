@@ -1,6 +1,6 @@
 {
   "name": "com.tsukumistudio.mornwebutil",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "MornWebUtil",
   "description": "WebGL・エディタ上で URL をブラウザで開くためのユーティリティ。",
   "unity": "6000.0",
