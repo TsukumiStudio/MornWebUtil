@@ -1,5 +1,4 @@
-#if USE_ARBOR || USE_MORNSTATE
-#if USE_MORNSTATE
+#if !USE_ARBOR
 using MornLib;
 using System;
 #else
@@ -11,7 +10,7 @@ using UnityEngine;
 namespace MornLib
 {
     [Serializable]
-#if USE_MORNSTATE
+#if !USE_ARBOR
     public sealed class OpenURLState : MornStateBehaviour
 #else
     public sealed class OpenURLState : StateBehaviour
@@ -25,4 +24,3 @@ namespace MornLib
         }
     }
 }
-#endif
