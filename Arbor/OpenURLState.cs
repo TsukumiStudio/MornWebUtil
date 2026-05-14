@@ -1,20 +1,17 @@
-#if !USE_ARBOR
+#if USE_MORNSTATE || USE_ARBOR
+#if USE_MORNSTATE
 using MornLib;
-using System;
-#else
+using StateBehaviour = MornLib.MornStateBehaviour;
+#elif USE_ARBOR
 using Arbor;
-using System;
 #endif
+using System;
 using UnityEngine;
 
 namespace MornLib
 {
     [Serializable]
-#if !USE_ARBOR
-    public sealed class OpenURLState : MornStateBehaviour
-#else
     public sealed class OpenURLState : StateBehaviour
-#endif
     {
         [SerializeField] private string _url;
 
@@ -24,3 +21,4 @@ namespace MornLib
         }
     }
 }
+#endif // USE_MORNSTATE || USE_ARBOR
